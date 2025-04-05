@@ -1,10 +1,10 @@
 package com.springboot.store.model;
 
 public class Componente {
-    private Long id;
-    private String nome;
-    private int consumo;
-    private double  preco;
+    public Long id;
+    public String nome;
+    public int consumo;
+    public double  preco;
 
     public Componente(Long id, String nome, int consumo, double preco){
         this.id = id;

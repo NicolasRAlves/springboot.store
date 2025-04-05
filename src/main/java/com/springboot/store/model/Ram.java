@@ -1,25 +1,14 @@
 package com.springboot.store.model;
 
-public class Ram {
+public class Ram extends Componente {
     private TipoMemoria tipoMemoria;
     private Socket socket;
-    private int  tamanhoGb;
+    private int tamanhoGb;
 
-
-    private Long id;
-    private String nome;
-    private int consumo;
-    private double preco;
-
-    public Ram (long id, String nome, int consumo, double preco, TipoMemoria tipoMemoria, int tamanhoGb) {
-        this.tamanhoGb = tamanhoGb;
-        this.socket = socket;
+    public Ram(Long id, String nome, int consumo, double preco, TipoMemoria tipoMemoria, int tamanhoGb) {
+        super(id, nome, consumo, preco);
         this.tipoMemoria = tipoMemoria;
-
-        this.id = id;
-        this.consumo = consumo;
-        this.nome = nome;
-        this.preco = preco;
+        this.tamanhoGb = tamanhoGb;
     }
 
     public TipoMemoria getTipoMemoria() {
@@ -30,14 +19,6 @@ public class Ram {
         this.tipoMemoria = tipoMemoria;
     }
 
-    public Socket getSocket() {
-        return socket;
-    }
-
-    public void setSocket(Socket socket) {
-        this.socket = socket;
-    }
-
     public int getTamanhoGb() {
         return tamanhoGb;
     }
@@ -46,37 +27,14 @@ public class Ram {
         this.tamanhoGb = tamanhoGb;
     }
 
-    public Long getId() {
-        return id;
+    public Socket getSocket() {
+        return socket;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setSocket(Socket socket) {
+        this.socket = socket;
     }
 
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
-
-    public int getConsumo() {
-        return consumo;
-    }
-
-    public void setConsumo(int consumo) {
-        this.consumo = consumo;
-    }
-
-    public double getPreco() {
-        return preco;
-    }
-
-    public void setPreco(double preco) {
-        this.preco = preco;
-    }
 
     public boolean compativel(Cpu cpu) {
         return this.socket == cpu.getSocket();
